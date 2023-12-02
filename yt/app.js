@@ -9,22 +9,24 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 require('dotenv').config(); // Load environment variables from .env file
-const express = require('express'); // Import express
-const axios = require('axios'); // Import axios
+const express = require('express');
+const cors = require('cors');
+const axios = require('axios');
 const app = express();
-const port = process.env.PORT || 3000; // Use environment variable or port 3000 as default
+const port = process.env.PORT || 3000;
+app.use(cors());
 // Define a route
-// app.get('/', (req: any, res: { send: (arg0: string) => void }) => {
-//   res.send('Hello, Express!')
-// })
+app.get('/', (req, res) => {
+    res.send('Hello, Express!');
+});
 // Define a route to fetch videos
-app.get('/videos', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+app.get('/api/videos', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const response = yield axios.get('https://www.googleapis.com/youtube/v3/search', {
             params: {
                 part: 'snippet',
                 maxResults: 10,
-                q: 'coding tutorials', // Example search query
+                q: 'astrology 2024', // Example search query
                 key: process.env.YOUTUBE_API_KEY,
             },
         });

@@ -1,9 +1,11 @@
 require('dotenv').config() // Load environment variables from .env file
-const express = require('express') // Import express
-const axios = require('axios') // Import axios
+const express = require('express')
+const cors = require('cors')
+const axios = require('axios')
 
 const app = express()
-const port = process.env.PORT || 3000 // Use environment variable or port 3000 as default
+const port = process.env.PORT || 3000
+app.use(cors())
 
 // Define a route
 app.get('/', (req: any, res: { send: (arg0: string) => void }) => {
@@ -12,7 +14,7 @@ app.get('/', (req: any, res: { send: (arg0: string) => void }) => {
 
 // Define a route to fetch videos
 app.get(
-  '/videos',
+  '/api/videos',
   async (
     req: any,
     res: {
@@ -31,7 +33,7 @@ app.get(
           params: {
             part: 'snippet',
             maxResults: 10,
-            q: 'coding tutorials', // Example search query
+            q: 'astrology 2024', // Example search query
             key: process.env.YOUTUBE_API_KEY,
           },
         }

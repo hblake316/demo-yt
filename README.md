@@ -1,4 +1,5 @@
 # demo-yt
+
 YouTube clone demo project using Node.js, Express.js, MongoDB, TypeScript, and React.
 
 # Create a YouTube Clone
@@ -20,30 +21,6 @@ brew install mongodb-community@7.0
 
 ```
 npm init -y
-```
-
-```
-// package.json
-{
-  "name": "yt",
-  "version": "1.0.0",
-  "description": "A Node.js application with server.js as the entry point",
-  "main": "server.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo "Error: no test specified" && exit 1",
-    "start": "node server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@types/express": "^4.17.21",
-    "express": "^4.18.2",
-    "mongoose": "^8.0.2",
-    "typescript": "^5.3.2"
-  }
-}
 ```
 
 5. Create `server.js` in the Project Directory
@@ -85,27 +62,25 @@ npm init -y
 - `npm install --save @types/express`
 - `npm install axios`
 - `npm install dotenv`
+- `npm install cors`
+- `npm install -g nodemon`
 
-2. Create `app.ts`
-
-```
-const express = require('express') // Import express
-const app = express()
-const port = process.env.PORT || 3000 // Use environment variable or port 3000 as default
-
-// Define a route
-app.get('/', (req: any, res: { send: (arg0: string) => void }) => {
-res.send('Hello, Express!')
-})
-
-// Start the server
-app.listen(port, () => {
-console.log(`Server is running on port ${port}`)
-})
-```
-
+2. Create `app.ts` in the Project Directory.
 3. Initialize TypeScript (this will transpile an `app.js` file): `tsc --init`
 4. Start the App: `node app.js`
 5. Access the app in the browser at `http://localhost:3000/`
 
 ---
+
+## Set up React + TypeScript Project
+
+1. Install Vite: `npm install -g create-vite`
+2. Create a React + TypeScript Project: `create-vite yt-app --template react-ts`
+
+```
+cd yt-app
+npm install
+npm run dev
+```
+
+3. Configure Vite for the Environment by updating vite.config.ts.
