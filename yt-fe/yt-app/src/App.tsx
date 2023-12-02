@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import { ChakraProvider, Button } from '@chakra-ui/react'
 
 interface VideoData {
   kind: string
@@ -50,23 +50,25 @@ function App() {
   }, [])
 
   return (
-    <div className='App'>
-      <h1>demo</h1>
-      <div className='card'>
-        {data.map((video, idx) => (
-          <div key={idx}>
-            <p>{video.snippet.channelTitle}</p>
-            <p>{video.snippet.title}</p>
-            <p>{video.snippet.description}</p>
-            <p>{video.snippet.publishTime}</p>
-            <img
-              src={video.snippet.thumbnails.medium.url}
-              alt={video.snippet.title}
-            />
-          </div>
-        ))}
+    <ChakraProvider>
+      <div className='App'>
+        <Button colorScheme='blue'>Demo</Button>
+        <div className='card'>
+          {data.map((video, idx) => (
+            <div key={idx}>
+              <p>{video.snippet.channelTitle}</p>
+              <p>{video.snippet.title}</p>
+              <p>{video.snippet.description}</p>
+              <p>{video.snippet.publishTime}</p>
+              <img
+                src={video.snippet.thumbnails.medium.url}
+                alt={video.snippet.title}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </ChakraProvider>
   )
 }
 

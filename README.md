@@ -74,8 +74,12 @@ npm init -y
 
 ## Set up React + TypeScript Project
 
-1. Install Vite: `npm install -g create-vite`
-2. Create a React + TypeScript Project: `create-vite yt-app --template react-ts`
+1. Install some packages:
+
+- `npm install -g create-vite`
+- `npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion`
+
+1. Create a React + TypeScript Project: `create-vite yt-app --template react-ts`
 
 ```
 cd yt-app
@@ -84,3 +88,5 @@ npm run dev
 ```
 
 3. Configure Vite for the Environment by updating vite.config.ts.
+4. Set up the ChakraProvider.
+5.
