@@ -1,32 +1,8 @@
 # demo-yt
 
-YouTube clone demo project using Node.js, Express.js, MongoDB, TypeScript, and React.
+YouTube clone demo project using the YouTube Data v3 API, Node.js, Express.js, MongoDB, TypeScript, and React. Chakra UI is used to style the app.
 
-# Create a YouTube Clone
-
-## Set up Node.js and MongoDB
-
-1. Install Node.js from the official website.
-2. Install MongoDB (Homebrew is already installed).
-
-```
-brew tap mongodb/brew
-brew update
-xcode-select --install
-brew install mongodb-community@7.0
-```
-
-3. Create and Navigate to Project Directory: `cd /Users/hblake/my-demos/yt`
-4. Initialize Node.js Backend (this creates a `package.json` file).
-
-```
-npm init -y
-```
-
-5. Create `server.js` in the Project Directory
-6. Install Express and Mongoose: `npm install express mongoose`
-7. Create the Data DB Directory for MongoDB: `mkdir /Users/hblake/my-demos/data/db`
-8. Run MongoDB: `mongod --dbpath /Users/hblake/my-demos/data/db`
+The server application uses Node.js, Express.js and MongoDB.
 
 ### To Do
 
@@ -42,51 +18,25 @@ npm init -y
 
 ---
 
-# Google Cloud
+## Running the server application
 
-1. Create a New Project in Google Cloud Console: `demo-yt`
-2. Add YouTube Data API (v3) and Create Public Data Credentials
-
-- Restrict the API key to IP addresses.
-- Restrict the API key to use YouTube Data API v3 only.
-
-3. Set up an environment variable to store the API key.
-
----
-
-# Create the Backend App
-
-1. Install some packages:
-
-- `npm install -g typescript`
-- `npm install --save @types/express`
-- `npm install axios`
-- `npm install dotenv`
-- `npm install cors`
-- `npm install -g nodemon`
-
-2. Create `app.ts` in the Project Directory.
-3. Initialize TypeScript (this will transpile an `app.js` file): `tsc --init`
-4. Start the App: `node app.js`
-5. Access the app in the browser at `http://localhost:3000/`
-
----
-
-## Set up React + TypeScript Project
-
-1. Install some packages:
-
-- `npm install -g create-vite`
-- `npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion`
-
-1. Create a React + TypeScript Project: `create-vite yt-app --template react-ts`
+1. Clone the repo: `git clone https://github.com/hblake316/demo-yt.git`
+2. Navigate to the project directory: `cd demo-yt`
+3. Install some packages:
 
 ```
-cd yt-app
-npm install
-npm run dev
+npm install -g typescript
+npm i --save-dev @types/node
+npm install -g nodemon
+npm install dotenv
+npm install axios
 ```
 
-3. Configure Vite for the Environment by updating vite.config.ts.
-4. Set up the ChakraProvider.
-5.
+4. Start the server application: `tsc && node app.js`
+
+## Running the client application
+
+1. Navigate to the client project directory: `cd yt-fe/app`
+2. Install the packages: `npm install`
+3. Start the application: `npm run dev`
+4. Open a browser to `http://localhost:5173/`
